@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/design-studio/static/css/main.dfca195d.chunk.css",
+    "main.js": "/design-studio/static/js/main.0a2fed48.chunk.js",
+    "main.js.map": "/design-studio/static/js/main.0a2fed48.chunk.js.map",
+    "runtime-main.js": "/design-studio/static/js/runtime-main.a41b4cf2.js",
+    "runtime-main.js.map": "/design-studio/static/js/runtime-main.a41b4cf2.js.map",
+    "static/js/2.890993e7.chunk.js": "/design-studio/static/js/2.890993e7.chunk.js",
+    "static/js/2.890993e7.chunk.js.map": "/design-studio/static/js/2.890993e7.chunk.js.map",
+    "index.html": "/design-studio/index.html",
+    "precache-manifest.5ee1dd762cb1cf93f8ec30b688677def.js": "/design-studio/precache-manifest.5ee1dd762cb1cf93f8ec30b688677def.js",
+    "service-worker.js": "/design-studio/service-worker.js",
+    "static/css/main.dfca195d.chunk.css.map": "/design-studio/static/css/main.dfca195d.chunk.css.map",
+    "static/media/logo.svg": "/design-studio/static/media/logo.25bf045c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a41b4cf2.js",
+    "static/js/2.890993e7.chunk.js",
+    "static/css/main.dfca195d.chunk.css",
+    "static/js/main.0a2fed48.chunk.js"
+  ]
+}
