@@ -1,4 +1,4 @@
-import Bluebird from 'util/Promise';
+import Bluebird from '../util/Promise';
 
 export const getRequestActionType = (actionType: string): string => `${actionType}_REQUEST`;
 export const getCancelledActionType = (actionType: string): string => `${actionType}_CANCELLED`;
