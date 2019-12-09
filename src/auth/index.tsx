@@ -1,17 +1,15 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { useCookies } from 'react-cookie';
 import GapiApi from './GapiApi';
 
 
 export default function Auth(){
-  const [cookies, setCookie, removeCookie] = useCookies(['login']);
+  const [_, setCookie] = useCookies(['login']);
   
   async function handleSignIn(){
     const cb = () => setCookie('login', true, {path: '/'});
     GapiApi.shared.signIn(cb);
-    //;
   }
-
 
   return(
     <>

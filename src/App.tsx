@@ -8,12 +8,11 @@ import GapiApi from './auth/GapiApi';
 declare var gapi : any;
 
 const App: React.FC = () => {
-  const [cookies, setCookie, removeCookie] = useCookies(['login']);
+  const [cookies, _, removeCookie] = useCookies(['login']);
   
   if(!cookies.login){
     return <Auth />
   }
-
 
   const handleSignOut = () => {
     const cb = () => removeCookie('login');
