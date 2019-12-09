@@ -1,26 +1,20 @@
-import React from 'react'
-import Script from 'react-load-script';
-import { loggedIn } from '../redux/actions';
+import React, {useState} from 'react'
+import { useCookies } from 'react-cookie';
+import GapiApi from './GapiApi';
 
-declare var gapi : any;
 
-const Auth = () => {
-
-  const handleSignIn = () => {
-    gapi.load('auth2', () => {
-      const auth2 = gapi.auth2.init({client_id: '213328197517-079p7u328erbifqllrsimnhi3phsdos9'});
-      auth2.signIn().then( () => {
-        loggedIn();
-      })
-    });
+export default function Auth(){
+  const [cookies, setCookie, removeCookie] = useCookies(['login']);
+  
+  async function handleSignIn(){
+    const cb = () => setCookie('login', true, {path: '/'});
+    GapiApi.shared.signIn(cb);
+    //;
   }
+
 
   return(
     <>
-      <Script
-        type='text/javascript'
-        url={'https://apis.google.com/js/platform.js'}
-      />
       <div className = "login-page">
         <div className = "login-box">
           <div className = "login-logo-box">
@@ -38,4 +32,3 @@ const Auth = () => {
   )
 }
 
-export default Auth;

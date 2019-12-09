@@ -1,18 +1,23 @@
 import React from 'react';
 import logo from './logo.svg';
-import { useSelector } from 'react-redux';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { isLoggedInSelector } from './redux/selectors';
 import Auth from './auth';
+import { useCookies } from 'react-cookie';
+import GapiApi from './auth/GapiApi';
 
+declare var gapi : any;
 
 const App: React.FC = () => {
-  const isLoggedIn = useSelector(isLoggedInSelector);
-  console.log(isLoggedIn);
+  const [cookies, setCookie, removeCookie] = useCookies(['login']);
   
-  if(!isLoggedIn){
+  if(!cookies.login){
     return <Auth />
+  }
+
+
+  const handleSignOut = () => {
+    const cb = () => removeCookie('login');
+    GapiApi.shared.signOut(cb);
   }
 
   return (
@@ -32,6 +37,9 @@ const App: React.FC = () => {
             Learn React
           </a>
         </header>
+        <button onClick={handleSignOut}>
+          Log out
+        </button>
       </div>
     </>
   );
