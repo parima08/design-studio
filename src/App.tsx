@@ -5,7 +5,7 @@ import { useCookies } from 'react-cookie';
 import { withRouter, Switch } from 'react-router';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Home from './home';
-import AssetList from './assetList.tsx';
+import AssetList from './assetList';
 
 
 const App: React.FC = () => {

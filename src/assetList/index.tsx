@@ -37,9 +37,13 @@ export default function AssetList({
     )
   }
 
+  //grid system
+  //if there are two options, then we need to do a hover over.
+
   const renderThumbnail = (asset) => (
     <a className = "material-link">
-      <div className = "material-element">
+      {/* <div className = "material-element"> */}
+      <div>
         <div className = "object-container">
           <div className = "image-container">
           <div className = "hover-overlay"></div>
@@ -56,7 +60,9 @@ export default function AssetList({
   return (
     <>
       <h1>{assetName}</h1>
-      {assets.map( asset => renderThumbnail(asset))}
+      <div>
+        {assets.map( asset => renderThumbnail(asset))}
+      </div>
     </>
   );
 }
